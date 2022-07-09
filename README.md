@@ -11,6 +11,13 @@ This project currently offers the following features.
 * Mod configuration and autoload.
 * Events for client connections and Mod configure reload.
 
+### Mod Option Path
+
+TOML config path:
+
+* Linux: `~/.config/Necesse/cfg/ModOptions.toml`
+* Windows: `C:/Users/USER_NAME/AppData/Roaming/Necesse/cfg/ModOptions.toml`
+
 ## How to use
 
 ### Glimpse:
