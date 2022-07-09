@@ -9,11 +9,15 @@ import necesse.engine.network.client.ClientClient;
 
 public class ClientNetworkManager {
 
-    public static void onServerConnected(ClientClient client) {
+    public static ClientClient client = null;
+
+    private static void onServerConnected(ClientClient client) {
+        ClientNetworkManager.client = client;
     }
 
-    public static void onServerDisconnect(ClientClient client) {
+    private static void onServerDisconnect(ClientClient client) {
         ModOptionBuilder.switchToLocalConfig();
+        ClientNetworkManager.client = null;
     }
 
     public static void init() {

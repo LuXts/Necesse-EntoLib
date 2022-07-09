@@ -6,6 +6,7 @@ import com.electronwill.nightconfig.toml.TomlFormat;
 import com.electronwill.nightconfig.toml.TomlWriter;
 import entolib.events.ModOptionChangedEvent;
 import necesse.engine.GameEvents;
+import necesse.engine.GameLog;
 import necesse.engine.GlobalData;
 
 import java.io.IOException;
@@ -21,6 +22,7 @@ public class ModOptionBuilder {
 
     public static void init() throws IOException {
         Path configFilePath = Paths.get(GlobalData.cfgPath() + "ModOptions.toml");
+        GameLog.debug.println(configFilePath.toUri());
         if (!Files.exists(configFilePath)) {
             Files.createFile(configFilePath);
         }
@@ -59,4 +61,11 @@ public class ModOptionBuilder {
         TomlWriter tomlWriter = TomlFormat.instance().createWriter();
         return tomlWriter.writeToString(localConfig);
     }
+
+    public static void reloadModOptions() {
+        if (localConfig != null) {
+            localConfig.load();
+        }
+    }
+
 }

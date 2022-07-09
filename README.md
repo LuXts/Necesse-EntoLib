@@ -9,7 +9,14 @@ I think providing a shared library would avoid a lot of duplication of work. So 
 This project currently offers the following features.
 
 * Mod configuration and autoload.
+* Reload Mod configuration command.
 * Events for client connections and Mod configure reload.
+
+### New Events
+
+* ModOptionChangedEvent
+* ClientClientDisconnectEvent
+* ClientClientConnectedEvent
 
 ### Mod Option Path
 
@@ -62,7 +69,6 @@ Chinese to communicate with me is not as good as having me read English.
 
 ## TODO:
 
-* Add `/reloadModOptions` command.
 * Add more events.
 
 Check out the [modding wiki page](https://necessewiki.com/Modding) for more.
